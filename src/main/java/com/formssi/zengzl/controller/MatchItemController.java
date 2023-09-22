@@ -27,4 +27,5 @@ public class MatchItemController {
     public void createMatchItem(@RequestBody @Valid MatchItemDTO matchItemDTO) {
         matchItemService.createMatchItem(matchItemDTO);
     }
+
 }
