@@ -16,8 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "报名接口")
 @RequestMapping("matchParticipation")
 public class MatchParticipationController {
-    @Autowired
-    private MatchParticipationService matchParticipationService;
+    private final MatchParticipationService matchParticipationService;
+
+    public MatchParticipationController(MatchParticipationService matchParticipationService) {
+        this.matchParticipationService = matchParticipationService;
+    }
 
     @ApiOperation("参加比赛")
     @PostMapping

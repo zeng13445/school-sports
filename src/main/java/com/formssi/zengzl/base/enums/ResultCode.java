@@ -24,6 +24,12 @@ public enum ResultCode {
 
     DATA_EXISTED(1006, "数据已存在"),
 
+    APPLY_NOT_START(1007, "报名未开始"),
+
+    APPLY_HAS_ENDED(1008, "报名已结束"),
+
+    JOIN_EXISTED(1009, "用户已参赛"),
+
     ERROR(5000, "未知错误");
 
     private Integer code;

@@ -37,4 +37,9 @@ public class MatchItemServiceImpl implements MatchItemService {
         int insert = matchItemMapper.insert(matchItem);
         ServiceAssert.isTrue(insert > 0, ResultCode.CREATE_FAILED);
     }
+
+    @Override
+    public MatchItem matchItemDetails(Long matchId) {
+        return matchItemMapper.selectById(matchId);
+    }
 }

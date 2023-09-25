@@ -2,4 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.formssi.zengzl.mapper.MatchResultMapper">
 
+    <select id="getResults" resultType="com.formssi.zengzl.entity.vo.MatchResultVO">
+        select
+            a.*,
+            a.id as matchResultId,
+            b.match_name,
+            c.user_name
+        from
+            match_result a
+        left join match_item b on
+            a.match_id = b.id
+        left join sys_user c on
+            a.user_id = c.id
+        <where>
+            <if test="data.id != null">and a.id = #{data.id}</if>
+            <if test="data.userId != null">and a.user_id = #{data.userId}</if>
+            <if test="data.matchId != null">and a.match_id = #{data.matchId}</if>
+            <if test="data.score != null and data.score != ''">and a.score like concat('%',#{data.score},'%')</if>
+            <if test="data.round != null">and a.round = #{data.round}</if>
+        </where>
+    </select>
 </mapper>
