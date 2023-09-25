@@ -1,0 +1,47 @@
+# 配置端口和全局路径
+server:
+    port: 8081
+    servlet:
+        contextPath: /zengzl
+
+# 配置DB
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://10.81.209.6:3306/sport?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        druid:
+            filters: stat,config,encoding,wall
+            initial-size: 1
+            max-active: 30
+            validationQuery: SELECT 1 FROM DUAL
+    redis:
+        host: 127.0.0.1
+        port: 6379
+
+# 配置mybatisPlus
+mybatis-plus:
+    mapper-locations: classpath:com/formssi/zengzl/mapper/*.xml
+    typeAliasesPackage: com.formssi.zengzl.entity
+    configuration:
+        map-underscore-to-camel-case: true
+    global-config:
+        refresh-mapper: true
+        db-config:
+            id-type: assign_id
+
+# 配置日志
+logging:
+    level:
+        com:
+            formssi:
+                zengzl:
+                    mapper: DEBUG
+
+# 配置文档
+swagger:
+    enable: true
+knife4j:
+    production: false
