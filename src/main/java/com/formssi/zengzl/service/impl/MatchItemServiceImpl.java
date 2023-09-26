@@ -27,7 +27,8 @@ public class MatchItemServiceImpl implements MatchItemService {
         LambdaQueryWrapper<MatchItem> lambdaQueryWrapper = Wrappers.lambdaQuery(MatchItem.class);
         lambdaQueryWrapper.eq(MatchItem::getMatchName, matchItemDTO.getMatchName());
         List<MatchItem> matchItems = matchItemMapper.selectList(lambdaQueryWrapper);
-        ServiceAssert.isTrue(CollectionUtils.isEmpty(matchItems), ResultCode.DATA_EXISTED);
+        ServiceAssert.isTrue(CollectionUtils.isEmpty(matchItems), ResultCode.DATA_EXISTED,
+                "已有名为" + matchItemDTO.getMatchName() + "的比赛");
 
         // 2.新增
         MatchItem matchItem = new MatchItem();

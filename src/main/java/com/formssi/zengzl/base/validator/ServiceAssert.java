@@ -26,7 +26,7 @@ public class ServiceAssert {
      */
     public static void isTrue(boolean expression, ResultCode code, String message) {
         if (!expression) {
-            throw new ValidateException(code.getCode(), message);
+            throw new ValidateException(code, message);
         }
     }
     public static void isTrue(boolean expression, ResultCode code) {
@@ -46,7 +46,7 @@ public class ServiceAssert {
      */
     public static void notNull(Object object, ResultCode code, String message) {
         if (object == null || object == "null") {
-            throw new ValidateException(code.getCode(), message);
+            throw new ValidateException(code, message);
         }
     }
     public static void notNull(Object object, ResultCode code) {
@@ -63,7 +63,7 @@ public class ServiceAssert {
      */
     public static void isNull(Object object, ResultCode code, String message) {
         if (object != null) {
-            throw new ValidateException(code.getCode(), message);
+            throw new ValidateException(code, message);
         }
     }
 

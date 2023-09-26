@@ -32,4 +32,10 @@ public class ValidateException extends RuntimeException {
         this.msg = code.getMsg();
     }
 
+    public ValidateException(ResultCode code, String msg) {
+        super(String.format(code.getMsg(), msg));
+        this.code = code.getCode();
+        this.msg = String.format(code.getMsg(), msg);
+    }
+
 }

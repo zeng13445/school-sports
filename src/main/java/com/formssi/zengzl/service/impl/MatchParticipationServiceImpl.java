@@ -28,8 +28,8 @@ public class MatchParticipationServiceImpl implements MatchParticipationService 
 
     @Override
     public void joinMatch(MatchParticipation matchParticipation) {
-        ServiceAssert.notNull(matchParticipation.getMatchId(), ResultCode.VALIDATE_FAILED);
-        ServiceAssert.notNull(matchParticipation.getUserId(), ResultCode.VALIDATE_FAILED);
+        ServiceAssert.notNull(matchParticipation.getMatchId(), ResultCode.VALIDATE_FAILED, "赛事ID不为空");
+        ServiceAssert.notNull(matchParticipation.getUserId(), ResultCode.VALIDATE_FAILED, "用户ID不为空");
 
         // 1.校验报名时间
         MatchItem matchItem = matchItemService.matchItemDetails(matchParticipation.getMatchId());

@@ -26,4 +26,11 @@ public class APIException extends RuntimeException {
         this.code = code;
         this.msg = msg;
     }
+
+    public APIException(ResultCode code, String msg) {
+        super(String.format(code.getMsg(), msg));
+        this.code = code.getCode();
+        this.msg = String.format(code.getMsg(), msg);
+    }
+
 }

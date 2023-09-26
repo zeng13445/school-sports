@@ -30,6 +30,11 @@ public class ResultVO<T> {
         this.data = data;
     }
 
+    public ResultVO(ResultCode resultCode, String msg) {
+        this.code = resultCode.getCode();
+        this.msg = String.format(resultCode.getMsg(), msg);
+    }
+
     public ResultVO(Integer code, String msg) {
         this.code = code;
         this.msg = msg;

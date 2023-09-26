@@ -14,7 +14,7 @@ public enum ResultCode {
 
     FAILED(1001, "响应失败"),
 
-    VALIDATE_FAILED(1002, "参数校验失败"),
+    VALIDATE_FAILED(1002, "参数校验失败：%s"),
 
     NULL_POINTER(1003, "空指针异常"),
 
@@ -22,7 +22,7 @@ public enum ResultCode {
 
     CREATE_FAILED(1005, "创建失败"),
 
-    DATA_EXISTED(1006, "数据已存在"),
+    DATA_EXISTED(1006, "数据已存在：%s"),
 
     APPLY_NOT_START(1007, "报名未开始"),
 

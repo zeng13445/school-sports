@@ -46,6 +46,7 @@ public class MatchResultController {
     public IPage<MatchResultVO> getResults(MatchResult matchResult,
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize) {
+
         Page<MatchResultVO> page = new Page<>(pageNum, pageSize);
         return matchResultService.getResults(page, matchResult);
     }
