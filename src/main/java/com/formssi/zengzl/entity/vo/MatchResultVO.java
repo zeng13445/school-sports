@@ -2,6 +2,7 @@ package com.formssi.zengzl.entity.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.Data;
 
@@ -21,7 +22,7 @@ public class MatchResultVO {
     private String userName;
 
     @ApiModelProperty("用户成绩")
-    private String score;
+    private BigDecimal score;
 
     @ApiModelProperty("用户成绩")
     private Integer round;

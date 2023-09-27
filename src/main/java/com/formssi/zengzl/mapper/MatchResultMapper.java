@@ -16,4 +16,11 @@ public interface MatchResultMapper extends BaseMapper<MatchResult> {
      */
     IPage<MatchResultVO> getResults(Page<MatchResultVO> page, @Param("data") MatchResult matchResult);
 
+    /**
+     * 查询排名
+     */
+    IPage<MatchResultVO> getRank(Page<MatchResultVO> page,
+            @Param("matchId") Long matchId,
+            @Param("round") Integer round);
+
 }

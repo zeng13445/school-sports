@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.formssi.zengzl.entity.MatchResult;
 import com.formssi.zengzl.entity.dto.MatchResultDTO;
 import com.formssi.zengzl.entity.vo.MatchResultVO;
+import java.math.BigDecimal;
 
 public interface MatchResultService {
 
@@ -16,11 +17,16 @@ public interface MatchResultService {
     /**
      * 更新成绩
      */
-    void updateResults(Long resultId, String score);
+    void updateResults(Long resultId, BigDecimal score);
 
     /**
      * 动态查询成绩
      */
     IPage<MatchResultVO> getResults(Page<MatchResultVO> page, MatchResult matchResult);
+
+    /**
+     * 查询排名
+     */
+    IPage<MatchResultVO> getRank(Page<MatchResultVO> page, Long matchId, Integer round);
 
 }

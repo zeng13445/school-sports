@@ -1,6 +1,6 @@
 # 配置端口和全局路径
 server:
-    port: 8081
+    port: 8082
     servlet:
         contextPath: /zengzl
 

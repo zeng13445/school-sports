@@ -1,7 +1,7 @@
 package com.formssi.zengzl.entity.dto;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.validation.constraints.NotBlank;
+import java.math.BigDecimal;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -17,7 +17,7 @@ public class MatchResultDTO {
     private Long matchId;
 
     @ApiModelProperty("成绩")
-    @NotBlank(message = "score不为空")
-    private String score;
+    @NotNull(message = "score不为空")
+    private BigDecimal score;
 
 }

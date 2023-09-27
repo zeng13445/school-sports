@@ -29,6 +29,9 @@ public class MatchItem {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date applyEndTime;
 
+    @ApiModelProperty("排名规则1升序2降序")
+    private Integer rankRule;
+
     @ApiModelProperty("创建时间")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createdTime;

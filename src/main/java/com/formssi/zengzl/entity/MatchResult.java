@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.Data;
 
@@ -25,7 +26,7 @@ public class MatchResult {
     private Long matchId;
 
     @ApiModelProperty("成绩")
-    private String score;
+    private BigDecimal score;
 
     @ApiModelProperty("轮次")
     private Integer round;

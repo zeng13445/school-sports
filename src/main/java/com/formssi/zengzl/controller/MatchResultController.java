@@ -8,6 +8,7 @@ import com.formssi.zengzl.entity.vo.MatchResultVO;
 import com.formssi.zengzl.service.MatchResultService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import java.math.BigDecimal;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +38,7 @@ public class MatchResultController {
 
     @ApiOperation("修改成绩")
     @PatchMapping
-    public void updateResults(@RequestParam Long resultId, @RequestParam String score) {
+    public void updateResults(@RequestParam Long resultId, @RequestParam BigDecimal score) {
         matchResultService.updateResults(resultId, score);
     }
 
@@ -49,6 +50,17 @@ public class MatchResultController {
 
         Page<MatchResultVO> page = new Page<>(pageNum, pageSize);
         return matchResultService.getResults(page, matchResult);
+    }
+
+    @ApiOperation("查询排名")
+    @GetMapping("/rank")
+    public IPage<MatchResultVO> getRank(@RequestParam Long matchId,
+            Integer round,
+            @RequestParam(defaultValue = "1") Integer pageNum,
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+
+        Page<MatchResultVO> page = new Page<>(pageNum, pageSize);
+        return matchResultService.getRank(page, matchId, round);
     }
 
 }

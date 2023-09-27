@@ -11,6 +11,7 @@ import com.formssi.zengzl.entity.dto.MatchResultDTO;
 import com.formssi.zengzl.entity.vo.MatchResultVO;
 import com.formssi.zengzl.mapper.MatchResultMapper;
 import com.formssi.zengzl.service.MatchResultService;
+import java.math.BigDecimal;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -47,7 +48,7 @@ public class MatchResultServiceImpl implements MatchResultService {
     }
 
     @Override
-    public void updateResults(Long resultId, String score) {
+    public void updateResults(Long resultId, BigDecimal score) {
         MatchResult matchResult = new MatchResult();
         matchResult.setId(resultId);
         matchResult.setScore(score);
@@ -60,5 +61,10 @@ public class MatchResultServiceImpl implements MatchResultService {
     @Override
     public IPage<MatchResultVO> getResults(Page<MatchResultVO> page, MatchResult matchResult) {
         return matchResultMapper.getResults(page, matchResult);
+    }
+
+    @Override
+    public IPage<MatchResultVO> getRank(Page<MatchResultVO> page, Long matchId, Integer round) {
+        return matchResultMapper.getRank(page, matchId, round);
     }
 }
