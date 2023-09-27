@@ -1,7 +1,6 @@
 package com.formssi.zengzl.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.formssi.zengzl.entity.MatchResult;
 import com.formssi.zengzl.entity.dto.MatchResultDTO;
 import com.formssi.zengzl.entity.vo.MatchResultVO;
@@ -22,11 +21,11 @@ public interface MatchResultService {
     /**
      * 动态查询成绩
      */
-    IPage<MatchResultVO> getResults(Page<MatchResultVO> page, MatchResult matchResult);
+    IPage<MatchResultVO> getResults(IPage<MatchResultVO> page, MatchResult matchResult);
 
     /**
      * 查询排名
      */
-    IPage<MatchResultVO> getRank(Page<MatchResultVO> page, Long matchId, Integer round);
+    IPage<MatchResultVO> getRank(IPage<MatchResultVO> page, Long matchId, Integer round);
 
 }

@@ -3,7 +3,6 @@ package com.formssi.zengzl.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.formssi.zengzl.base.enums.ResultCode;
 import com.formssi.zengzl.base.validator.ServiceAssert;
 import com.formssi.zengzl.entity.MatchResult;
@@ -68,12 +67,12 @@ public class MatchResultServiceImpl implements MatchResultService {
     }
 
     @Override
-    public IPage<MatchResultVO> getResults(Page<MatchResultVO> page, MatchResult matchResult) {
+    public IPage<MatchResultVO> getResults(IPage<MatchResultVO> page, MatchResult matchResult) {
         return matchResultMapper.getResults(page, matchResult);
     }
 
     @Override
-    public IPage<MatchResultVO> getRank(Page<MatchResultVO> page, Long matchId, Integer round) {
+    public IPage<MatchResultVO> getRank(IPage<MatchResultVO> page, Long matchId, Integer round) {
         return matchResultMapper.getRank(page, matchId, round);
     }
 }

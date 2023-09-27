@@ -38,7 +38,7 @@ public class MatchParticipationController {
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize) {
 
-        Page<MatchParticipation> page = new Page<>(pageNum, pageSize);
+        IPage<MatchParticipation> page = new Page<>(pageNum, pageSize);
         return matchParticipationService.getParticipation(page, matchId);
     }
 

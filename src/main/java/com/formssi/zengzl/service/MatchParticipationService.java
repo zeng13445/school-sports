@@ -1,7 +1,6 @@
 package com.formssi.zengzl.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.formssi.zengzl.entity.MatchParticipation;
 import com.formssi.zengzl.entity.vo.MatchParticipationVO;
 
@@ -20,5 +19,5 @@ public interface MatchParticipationService {
     /**
      * 查询报名信息
      */
-    IPage<MatchParticipationVO> getParticipation(Page<MatchParticipation> page, Long matchId);
+    IPage<MatchParticipationVO> getParticipation(IPage<MatchParticipation> page, Long matchId);
 }

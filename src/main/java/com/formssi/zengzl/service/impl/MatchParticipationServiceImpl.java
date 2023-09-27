@@ -3,7 +3,6 @@ package com.formssi.zengzl.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.formssi.zengzl.base.enums.ResultCode;
 import com.formssi.zengzl.base.utils.DateUtils;
 import com.formssi.zengzl.base.validator.ServiceAssert;
@@ -69,7 +68,7 @@ public class MatchParticipationServiceImpl implements MatchParticipationService 
     }
 
     @Override
-    public IPage<MatchParticipationVO> getParticipation(Page<MatchParticipation> page, Long matchId) {
+    public IPage<MatchParticipationVO> getParticipation(IPage<MatchParticipation> page, Long matchId) {
         return matchParticipationMapper.getParticipation(page, matchId);
     }
 }

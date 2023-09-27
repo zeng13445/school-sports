@@ -48,7 +48,7 @@ public class MatchResultController {
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize) {
 
-        Page<MatchResultVO> page = new Page<>(pageNum, pageSize);
+        IPage<MatchResultVO> page = new Page<>(pageNum, pageSize);
         return matchResultService.getResults(page, matchResult);
     }
 
@@ -59,7 +59,7 @@ public class MatchResultController {
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize) {
 
-        Page<MatchResultVO> page = new Page<>(pageNum, pageSize);
+        IPage<MatchResultVO> page = new Page<>(pageNum, pageSize);
         return matchResultService.getRank(page, matchId, round);
     }
 
