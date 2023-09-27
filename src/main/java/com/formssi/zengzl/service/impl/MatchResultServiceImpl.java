@@ -10,6 +10,7 @@ import com.formssi.zengzl.entity.MatchResult;
 import com.formssi.zengzl.entity.dto.MatchResultDTO;
 import com.formssi.zengzl.entity.vo.MatchResultVO;
 import com.formssi.zengzl.mapper.MatchResultMapper;
+import com.formssi.zengzl.service.MatchParticipationService;
 import com.formssi.zengzl.service.MatchResultService;
 import java.math.BigDecimal;
 import org.springframework.cglib.beans.BeanCopier;
@@ -18,14 +19,22 @@ import org.springframework.util.ObjectUtils;
 
 @Service
 public class MatchResultServiceImpl implements MatchResultService {
+    private final MatchParticipationService matchParticipationService;
     private final MatchResultMapper matchResultMapper;
 
-    public MatchResultServiceImpl(MatchResultMapper matchResultMapper) {
+    public MatchResultServiceImpl(MatchResultMapper matchResultMapper,
+            MatchParticipationService matchParticipationService) {
         this.matchResultMapper = matchResultMapper;
+        this.matchParticipationService = matchParticipationService;
     }
 
     @Override
     public void recordResults(MatchResultDTO matchResultDTO) {
+        // 0.校验用户是否参赛了
+        Boolean valid = matchParticipationService.validParticipation(matchResultDTO.getUserId(),
+                matchResultDTO.getMatchId());
+        ServiceAssert.isTrue(valid, ResultCode.VALIDATE_FAILED, "用户未报名不能参赛");
+
         // 1.获取该用户该比赛的最大轮次
         LambdaQueryWrapper<MatchResult> lambdaQueryWrapper = Wrappers.lambdaQuery(MatchResult.class);
         lambdaQueryWrapper.eq(MatchResult::getUserId, matchResultDTO.getUserId())

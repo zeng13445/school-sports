@@ -7,10 +7,10 @@ server:
 # 配置DB
 spring:
     datasource:
-        type: com.alibaba.druid.pool.DruidDataSource
         url: jdbc:mysql://10.81.209.6:3306/sport?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
         username: root
         password: root
+        type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         druid:
             filters: stat,config,encoding,wall

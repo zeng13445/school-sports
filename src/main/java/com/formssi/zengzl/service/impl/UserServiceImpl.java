@@ -1,6 +1,9 @@
 package com.formssi.zengzl.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.formssi.zengzl.base.enums.ResultCode;
+import com.formssi.zengzl.base.enums.UserTypeEnum;
+import com.formssi.zengzl.base.validator.ServiceAssert;
 import com.formssi.zengzl.entity.SysUser;
 import com.formssi.zengzl.entity.dto.UserDTO;
 import com.formssi.zengzl.mapper.UserMapper;
@@ -20,10 +23,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String addUser(SysUser sysUser) {
-        // 直接编写业务逻辑
-        //throw new APIException(-1, "错误");
-        return "success";
+    public void addUser(SysUser sysUser) {
+        sysUser.setUserType(UserTypeEnum.ATHLETE.ordinal());
+        int insert = userMapper.insert(sysUser);
+        ServiceAssert.isTrue(insert > 0, ResultCode.CREATE_FAILED);
     }
 
     @Override

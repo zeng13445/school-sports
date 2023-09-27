@@ -14,7 +14,7 @@ public interface UserService {
      * @param sysUser 用户对象
      * @return 成功则返回"success"，失败则返回错误信息
      */
-    String addUser(SysUser sysUser);
+    void addUser(SysUser sysUser);
 
     /**
      * 获取用户信息

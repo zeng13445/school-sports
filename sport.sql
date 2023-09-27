@@ -2,7 +2,7 @@
 
 CREATE TABLE `sys_user` (
                             `id` bigint(20) NOT NULL COMMENT '用户id',
-                            `user_type` tinyint(1) NOT NULL COMMENT '1运动员2数据录入员3学校管理员4体育总局超管',
+                            `user_type` tinyint(1) NOT NULL COMMENT '0运动员1数据录入员2学校管理员3体育总局超管',
                             `user_name` varchar(20) NOT NULL,
                             `password` varchar(50) NOT NULL,
                             `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,

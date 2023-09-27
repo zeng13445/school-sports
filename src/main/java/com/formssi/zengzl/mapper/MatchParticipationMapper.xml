@@ -2,4 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.formssi.zengzl.mapper.MatchParticipationMapper">
 
+    <select id="getParticipation" resultType="com.formssi.zengzl.entity.vo.MatchParticipationVO">
+        select
+            a.*,
+            a.id as participationId,
+            b.match_name,
+            c.user_name
+        from
+            match_participation a
+        left join match_item b on
+            a.match_id = b.id
+        left join sys_user c on
+            a.user_id = c.id
+        where
+            a.match_id = #{matchId}
+    </select>
 </mapper>

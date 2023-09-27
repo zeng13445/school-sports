@@ -32,12 +32,12 @@ public class UserController {
         this.redisTemplate = redisTemplate;
     }
 
-    @ApiOperation("添加用户")
-    @PostMapping("/addUser")
-    public String addUser(@RequestBody @Valid SysUser sysUser) {
-        Object name = redisTemplate.opsForValue().get("name");
-        System.out.println(name);
-        return userService.addUser(sysUser);
+    @ApiOperation("注册普通运动员")
+    @PostMapping
+    public void addUser(@RequestBody @Valid SysUser sysUser) {
+//        Object name = redisTemplate.opsForValue().get("name");
+//        System.out.println(name);
+        userService.addUser(sysUser);
     }
 
     @ApiOperation("获得单个用户")
