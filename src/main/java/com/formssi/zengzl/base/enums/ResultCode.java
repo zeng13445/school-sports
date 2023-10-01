@@ -30,6 +30,10 @@ public enum ResultCode {
 
     JOIN_EXISTED(1009, "用户已参赛"),
 
+    TOKEN_ERR(3001, "Token错误或过期"),
+
+    PERMISSION_NOT(3002, "没有权限"),
+
     ERROR(5000, "未知错误");
 
     private Integer code;

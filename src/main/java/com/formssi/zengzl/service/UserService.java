@@ -10,11 +10,14 @@ import com.formssi.zengzl.entity.dto.UserDTO;
  */
 public interface UserService {
     /**
-     *
-     * @param sysUser 用户对象
-     * @return 成功则返回"success"，失败则返回错误信息
+     * 注册
      */
     void addUser(SysUser sysUser);
+
+    /**
+     * 注册
+     */
+    SysUser login(SysUser sysUser);
 
     /**
      * 获取用户信息

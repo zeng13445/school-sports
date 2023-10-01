@@ -9,6 +9,10 @@ CREATE TABLE `sys_user` (
                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `sys_user` (`id`, `user_type`, `user_name`, `password`, `created_time`) VALUES ('1', '3', 'super_admin', 'admin', '2023-10-01 19:45:31');
+INSERT INTO `sys_user` (`id`, `user_type`, `user_name`, `password`, `created_time`) VALUES ('2', '2', 'admin', 'admin', '2023-10-01 19:45:45');
+INSERT INTO `sys_user` (`id`, `user_type`, `user_name`, `password`, `created_time`) VALUES ('3', '1', 'recorder', '123456', '2023-10-01 19:46:24');
+
 
 -- sport.match_item definition
 

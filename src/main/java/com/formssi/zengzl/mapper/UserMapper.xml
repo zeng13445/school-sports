@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.formssi.zengzl.mapper.UserMapper">
     <select id="getUserById" resultType="com.formssi.zengzl.entity.SysUser">
-        select * from sysUser where id = #{userId}
+        select * from sys_user where id = #{userId}
     </select>
 
     <select id="listUser" resultType="com.formssi.zengzl.entity.SysUser">
-        select * from sysUser
+        select * from sys_user
     </select>
 </mapper>

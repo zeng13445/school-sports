@@ -43,9 +43,9 @@ public class SwaggerConfig {
 
     public ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("参数校验和统一异常处理Demo")
-                .description("用来演示参数校验和统一异常处理")
-                .contact(new Contact("zengzl", "", "zengzl@pm.me"))
+                .title("运动会成绩管理系统API")
+                .description("API包含比赛、报名、结果和用户管理")
+                .contact(new Contact("zengzl", "", "zengzl7799@gmail.com"))
                 .version("1.0")
                 .build();
     }
