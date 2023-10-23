@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @Api(tags = "报名管理")
-@RequestMapping("matchParticipation")
+@RequestMapping("/matchParticipation")
 public class MatchParticipationController {
     private final MatchParticipationService matchParticipationService;
 

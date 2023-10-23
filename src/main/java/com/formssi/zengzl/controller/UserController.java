@@ -23,7 +23,7 @@ import java.util.HashMap;
 @Slf4j
 @RestController
 @Api(tags = "用户管理")
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
     private final JwtUtil jwtUtil;
     private final UserService userService;
@@ -54,13 +54,13 @@ public class UserController {
         return map;
     }
 
-    @GetMapping("getUserById")
+    @GetMapping("/getUserById")
     @ApiOperation("获取用户信息")
     public SysUser getUserById(@Valid UserDTO userDTO) {
         return userService.getUserById(userDTO);
     }
 
-    @GetMapping("listUser")
+    @GetMapping("/listUser")
     @ApiOperation("获取所有用户信息")
     public IPage<SysUser> listUser(@RequestParam(defaultValue = "1") Integer pageNum,
                                    @RequestParam(defaultValue = "10") Integer pageSize,

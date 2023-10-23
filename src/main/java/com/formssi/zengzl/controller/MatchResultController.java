@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @Api(tags = "结果管理")
-@RequestMapping("matchResult")
+@RequestMapping("/matchResult")
 public class MatchResultController {
     private final MatchResultService matchResultService;
 

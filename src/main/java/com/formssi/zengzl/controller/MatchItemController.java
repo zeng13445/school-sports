@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @Api(tags = "比赛管理")
-@RequestMapping("matchItem")
+@RequestMapping("/matchItem")
 public class MatchItemController {
     private final MatchItemService matchItemService;
 
